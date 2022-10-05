@@ -3,8 +3,16 @@
 *@
 @{
 }
+<style>
+    body {
+        background-image: url('https://media.istockphoto.com/vectors/floral-horizontal-background-vector-id1317638729?k=20&m=1317638729&s=612x612&w=0&h=epgRtDPm0q6HAHkw4_xl1UGedYHBsMkIJ231itTZ0S0=');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 1370px;
+    }
+</style>
 
-<div class="container justify-content-md-center">
+<div class="container justify-content-md-center mt-5">
     <form method="post" asp-controller="User" asp-action="ImportUsers" enctype="multipart/form-data">
         <div class="form-group w-25">
             <input type="file" name="file" class="form-control" />
@@ -12,6 +20,7 @@
 
         <hr />
 
-        <button type="submit" class="btn btn-outline-success">Import Excel</button>
+        <button type="submit" class="btn btn-outline-success">Import Excel</button> |
+        <a asp-action="Index" asp-controller="Home" class="btn btn-primary">Back</a>
     </form>
 </div>

@@ -1,34 +1,42 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
+﻿
 @model EFlowerShopAdminApplication.Models.EFlowerShopApplicationUser
 
-<div>
-    <a class="btn btn-success">Details For: @Model.Email</a>
-</div>
+    <style>
+        body {
+            background-image: url('https://cdn.shopify.com/s/files/1/0070/0687/9859/files/blanklogoimage_8f7bea01-a1ef-49a3-92e1-0bf37d10c0c2_2048x.jpg?v=1630590234');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 1370px;
+        }
+    </style>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-controller="User" asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Email" />
+    <div class="container" style="margin-left: 340px; margin-top: 140px;">
 
-            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                @*<input asp-for="Role" class="form-control" />*@
-                  <select asp-for="Role">
-                      <option value="Administrator">Administrator</option>
-                      <option value="User">User</option>
-                  </select>
-                <span asp-validation-for="Role" class="text-danger"></span>
+        <div>
+            <a class="btn btn-warning btn-lg">Details For: @Model.Email</a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-controller="User" asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Email" />
+
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="Role" class="control-label font-weight-bold" style="font-size:20px;"></label>
+                        <select asp-for="Role">
+                            <option value="Administrator">Administrator</option>
+                            <option value="User">User</option>
+                        </select>
+                        <span asp-validation-for="Role" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-success" /> |
+                        <a asp-action="ManageUsers" asp-controller="User" class="btn btn-primary">Back</a>
+                    </div>
+                </form>
             </div>
-
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>

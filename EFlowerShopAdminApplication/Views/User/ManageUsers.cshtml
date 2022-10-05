@@ -5,38 +5,46 @@
 }
 @model List<EFlowerShopAdminApplication.Models.EFlowerShopApplicationUser>
 
-<div class="container">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/premium-vector/watercolor-floral-with-succulent-anemone-flower-yellow-daisy_45050-301.jpg?w=2000');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 1370px;
+        }
+    </style>
+    <div class="container">
 
-    <table class="table mt-5">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">User Name</th>
-                <th scope="col">Role</th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (int i = 0; i < Model.Count; i++)
-            {
-                var item = Model[i];
-
+        <table class="table mt-5">
+            <thead class="thead-dark">
                 <tr>
-                    <th scope="row">@(i+1)</th>
-                    <td>@item.UserName</td>
-                    <td>@item.Role</td>
-                    <td>
-                        <a class="btn btn-outline-secondary" asp-controller="User" asp-action="ChangeRole"
-                           asp-route-id="@item.Email">Change Role</a>
-                    </td>
+                    <th scope="col">#</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Role</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var item = Model[i];
 
-            }
-        </tbody>
+                    <tr>
+                        <th scope="row">@(i+1)</th>
+                        <td class="font-weight-bold">@item.UserName</td>
+                        <td class="font-weight-bold">@item.Role</td>
+                        <td>
+                            <a class="btn btn-outline-secondary" asp-controller="User" asp-action="ChangeRole"
+                               asp-route-id="@item.Email">Change Role</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
 
 
-    </table>
-
-</div>
+        </table>
+        <a asp-action="Index" asp-controller="Home" class="btn btn-primary">Back</a>
+    </div>

@@ -45,7 +45,7 @@ namespace EFlowerShopAdminApplication.Controllers
 
             var result = response.Content.ReadAsAsync<bool>().Result;
 
-            return RedirectToAction("Index", "Order");
+            return RedirectToAction("Index", "Home");
         }
 
         private List<User> GetUsersFromExcelFile(string fileName)
@@ -127,9 +127,9 @@ namespace EFlowerShopAdminApplication.Controllers
 
             if (data)
             {
-                return RedirectToAction("Index", "User");
+                return RedirectToAction("ManageUsers", "User");
             }
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("ManageUsers", "User");
         }
 
     }

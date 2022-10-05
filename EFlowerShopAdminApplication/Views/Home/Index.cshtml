@@ -2,7 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background-image: url('https://img.freepik.com/free-vector/pink-flower-frame-background-with-watercolor_65186-2566.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 1370px;
+    }
+</style>
+
+<div class="text-center" style="width: 600px; margin-left: 265px; margin-top: 130px;">
+    <h1 class="display-4 font-weight-bold">Welcome to the EFlowerShop Admin Application</h1>
+
+    <a asp-controller="Order" asp-action="Index" class="btn btn-primary" style="margin-top: 50px;">View Orders</a>
 </div>
